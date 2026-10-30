@@ -1,0 +1,33 @@
+{
+  "name": "bill-world",
+  "version": "1.0.0",
+  "description": "Bill World Collections Pro",
+  "author": "Bill World",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.billworld.collections",
+    "productName": "Bill World",
+    "files": ["main.js", "www/**/*"],
+    "directories": { "output": "dist" },
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "artifactName": "BillWorld-Setup.exe",
+      "oneClick": true
+    },
+    "portable": {
+      "artifactName": "BillWorld-Portable.exe"
+    }
+  }
+}
